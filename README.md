@@ -3,16 +3,6 @@
 
 ## Objetivo
 Projetar, simular e sintetizar um banco de registradores similar ao utilizado no MIPS, no ambiente *Quartus* / *ModelSim-Altera*.
-
-## Características da ULA
-  - Uma entrada **opcode**, que indica a operação a ser realizada;
-  - Duas entradas de dados: **A** e **B**;
-  - Uma Saída de dados: **Z**;
-  - Sinal **Zero**: detecta valor zero na saída Z;
-  - Sinal **Overflow**: ativo quando a operação de soma ou subtração gerar resultado
-  que ultrapasse o limite de representação em 32 bits;
-  - Sinal **Vai**: indicação de vai-um no último bit da ULA;
-  - Operações realizadas em **Complemento de 2**.
   
 ## Características do Banco de Registradores
   - 32 registradores de 32 bits cada;
