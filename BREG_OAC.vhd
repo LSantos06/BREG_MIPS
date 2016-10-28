@@ -42,7 +42,13 @@ architecture comportamento of BREG_OAC is
 
 begin
 	
-	processo_breg: process (Clk) begin
+	processo_breg: process (Clk, RAdd1, RAdd2) begin
+	
+		-- Barramentos de leitura
+		-- R1 <= registrador[RAdd1]
+		R1 <= registrador(to_integer(unsigned(RAdd1)));
+		-- R2 <= registrador[RAdd2]
+		R2 <= registrador(to_integer(unsigned(RAdd2)));	
 	
 		if(rising_edge(Clk)) then
 			-- Barramento de escrita
@@ -50,13 +56,6 @@ begin
 				-- registrador[WAdd] <= WData
 				registrador(to_integer(unsigned(WAdd))) <= WData;
 			end if;		
-		
-			-- Barramentos de leitura
-			-- R1 <= registrador[RAdd1]
-			R1 <= registrador(to_integer(unsigned(RAdd1)));
-			-- R2 <= registrador[RAdd2]
-			R2 <= registrador(to_integer(unsigned(RAdd2)));
-		
 		end if;
 	
 	end process;
